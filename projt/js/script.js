@@ -47,6 +47,7 @@ $(function(){
 				// console.log(1);
 				$('#header').removeClass("scrolled");
 				$(window).scroll(function() {
+						console.log(3);
 						if ($(this).scrollTop() > 20) {
 								$('#header').addClass("scrolled").fadeIn('fast');
 						} else {
@@ -56,8 +57,6 @@ $(function(){
 		}else {
 			// console.log(2);
 		}
-		
-
 });
 
 
@@ -69,6 +68,23 @@ $(function(){
 		})
 		$(window).scroll().trigger('scroll');
 });
+
+
+
+// обрезать строку index.html
+$(function(){
+	// s7-block
+	$(".s7-ourServices__text>p:first-of-type").text(function(i, text) {
+			if (text.length >= 50) {
+				text = text.substring(0, 170);
+				var lastIndex = text.lastIndexOf(" ");       // позиция последнего пробела
+				text = text.substring(0, lastIndex) + '...'; // обрезаем до последнего слова
+			}
+			$(this).text(text);
+	});
+	$('.s7-ourServices__text > p').not('.s7-ourServices__text p:first-of-type').remove();
+});
+
 
 // scroll-bar
 // (function($){
