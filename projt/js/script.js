@@ -30,9 +30,9 @@ $(function(){
 
 		preloader: true,
 		callbacks: {
-		  open: function() {
-		    $('html').css('margin-right', '0');
-		  }
+			open: function() {
+				$('html').css('margin-right', '0');
+			}
 		},
 		midClick: true,
 		removalDelay: 300,
@@ -73,17 +73,32 @@ $(function(){
 
 // обрезать строку index.html
 $(function(){
+
 	// s7-block
 	$(".s7-ourServices__text>p:first-of-type").text(function(i, text) {
 			if (text.length >= 50) {
-				text = text.substring(0, 170);
+				text = text.substring(0, 185);
 				var lastIndex = text.lastIndexOf(" ");       // позиция последнего пробела
 				text = text.substring(0, lastIndex) + '...'; // обрезаем до последнего слова
 			}
 			$(this).text(text);
 	});
 	$('.s7-ourServices__text > p').not('.s7-ourServices__text p:first-of-type').remove();
+
+
+	// s10-block
+	$(".s10-ourBlog .s10-ourServices__text>p:first-of-type").text(function(i, text) {
+			if (text.length >= 50) {
+				text = text.substring(0, 285);
+				var lastIndex = text.lastIndexOf(" ");       // позиция последнего пробела
+				text = text.substring(0, lastIndex) + '...'; // обрезаем до последнего слова
+			}
+			$(this).text(text);
+	});
+	$('.s10-ourBlog .s10-ourServices__text > p').not('.s10-ourBlog .s10-ourServices__text p:first-of-type').remove();
+
 });
+
 
 
 // scroll-bar
