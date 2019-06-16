@@ -12,7 +12,7 @@ $(function(){
 	$("#sidebar-form").parent().css("min-height",totalHeight);
 
 	// livitatiya для
-	$("#sidebar-form").stick_in_parent({ offset_top: 77, offset_bottom: 77});
+	$("#sidebar-form").stick_in_parent({ offset_top: 82, offset_bottom: 82});
 
 })
 
@@ -32,9 +32,9 @@ $(function(){
 
 		preloader: true,
 		callbacks: {
-			open: function() {
-				$('html').css('margin-right', '0');
-			}
+		  open: function() {
+		    $('html').css('margin-right', '0');
+		  }
 		},
 		midClick: true,
 		removalDelay: 300,
@@ -120,10 +120,6 @@ $(function(){
 	// 	});
 	// })
 	
-	
-
-
-
 });
 
 // s7-block
@@ -136,5 +132,17 @@ $(function(){
 });
 
 
+$(function(){
+	// кусочек пазла, дом стоит на месте
+	$('body').click(function() {
+		$('body').css({
+			"position": "static",
+			"width": "auto",
+			"left": "0px",
+			"transition": "0.2s",
+			"overflow": "visible"
+		});
+	});
 
-
+	console.log( $('input').attr('email').css('background','red') );
+});
