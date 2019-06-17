@@ -144,5 +144,4 @@ $(function(){
 		});
 	});
 
-	console.log( $('input').attr('email').css('background','red') );
 });
